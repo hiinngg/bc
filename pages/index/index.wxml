@@ -1,0 +1,52 @@
+<!--index.wxml-->
+
+<view class="container">
+  <image class="bg" src='/images/background.png'></image>
+  <view class="zan-panel  mypanel ">
+    <view class="tabs d-flex align-items-center justify-content-center">
+      <view class="tab-item">
+        <text>汽车票</text>
+      </view>
+    </view>
+
+
+
+
+    <view class=" zan-row d-flex align-items-center ">
+      <view class=" zan-col zan-col-20" style="overflow:hidden;">
+
+        <view class="zan-cell" bindtap='navtodep'>
+          <view class="mytitle">出发城市</view>
+          <text class="mytext">{{departure}}</text>
+        </view>
+
+
+        <view class="zan-cell" bindtap='navtoarr'>
+          <view class="mytitle">到达城市</view>
+          <text class="mytext">{{arrival}}</text>
+        </view>
+
+
+      </view>
+
+      <view class="zan-col zan-col-4 ">
+
+        <image animation="{{animationData}}" bindtap='myrotate' src='/images/tran.png' style="width:80rpx; height:80rpx;"></image>
+
+      </view>
+
+    </view>
+
+    <view class="zan-cell" bindtap='navtodate'>
+      <view class="mytitle">出发日期</view>
+      <text class="mytext">{{date.month}}月{{date.date}}号 周{{dayTran[date.day]}} {{date.desc}}</text>
+    </view>
+
+    <view class='zan-btns'>
+      <button class="zan-btn mybg" bindtap='search'>查询汽车票</button>
+    </view>
+
+
+
+  </view>
+</view>

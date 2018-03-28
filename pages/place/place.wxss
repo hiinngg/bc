@@ -1,0 +1,44 @@
+/* pages/place/place.wxss */
+
+.box {
+  width: 683rpx;
+  height: 68rpx;
+  background: #fff;
+  border-radius: 3px;
+  padding: 15rpx 18rpx;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.search{
+  position: fixed;
+  top:33rpx;
+  z-index:100;
+
+  border: 1px solid #eee;
+}
+
+.title {
+  color: #7e7e7e;
+  font-size: 16px;
+  margin: 43rpx 0 26rpx 0;
+}
+
+.box-warpper {
+  width: 683rpx;
+  height: 68rpx;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.box-item{
+  width:210rpx;
+  height: 57rpx;
+  background: #ffffff;
+  line-height:57rpx;
+  text-align: center;
+  border-radius: 3px;
+}
+.active{
+color: #5f9df1;
+border: 1px solid #5f9df1;
+
+}

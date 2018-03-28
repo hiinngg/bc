@@ -1,0 +1,8 @@
+/* pages/detail/detail.wxss */
+.location {
+  padding: 47rpx 33rpx;
+  height: 248rpx;
+  background: #5f9df1;
+  color: #fff;
+  font-size: 11pt;
+}

@@ -1,0 +1,62 @@
+.calendar {
+  border: 1px solid #82b2f4;
+  padding: 15rpx 30rpx;
+}
+.zan-card{
+  padding:5px 0;
+}
+
+.mydate {
+  margin-top: 0;
+  height: 148rpx;
+  font-size: 12pt;
+  color: #82b2f4;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.price {
+  color: #fc4100;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+.circle_begin {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #5f9df1;
+  margin-right: 10rpx;
+}
+
+.circle_end {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #09d0d2;
+  margin-right: 10rpx;
+ 
+}
+
+.block {
+  border-left: 1px solid #a5a5a5;
+  height: 25rpx;
+  box-sizing: border-box;
+  margin-left:2px;
+}
+
+.oper {
+  height: 110rpx;
+  font-size:11pt;
+   width: 100%;
+  background: #465262;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  color:#5F9df1;
+}
+.dissel{
+  color:#aac8f7;
+}

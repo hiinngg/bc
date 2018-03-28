@@ -1,0 +1,38 @@
+<!--pages/calendar/calendar.wxml-->
+
+<view class='container'>
+  <view class="zan-panel notice" style="margin-top:0;">
+    今天是{{curMonth}}月{{curDate}}日
+  </view>
+  <view class="day d-flex align-items-center ">
+    <view style='color:#5f9df1;'>日</view>
+    <view>一</view>
+    <view>二</view>
+    <view>三</view>
+    <view>四</view>
+    <view>五</view>
+    <view style='color:#5f9df1;'>六</view>
+  </view>
+  <view class="zan-panel  " style="margin-top:0;text-align:center;">
+
+    <view class="section">
+
+      <picker mode="date" value="{{date}}" fields="month" start="{{curYear}}-{{curMonth}}" bindchange="DateChange">
+        <view class="picker">
+           <text class='ym'>{{query.year}}年{{query.month}}月</text>
+        </view>
+      </picker>
+    </view>
+
+   
+    <view class='date d-flex align-items-center flex-wrap'>
+      <view wx:if="{{hasEmptyGrid}}" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+      </view>
+      <view class="" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}">
+
+        <text bindtap="{{item.disable?'':'tapDayItem'}}" data-idx="{{index}}" class="{{item.disable ? 'date_disable':''}} {{item.today ? 'date_today' :''}}    {{(index==currentActive) ? 'date_active' : ''}} ">{{item.desc==""? item.day:item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>

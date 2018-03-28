@@ -1,0 +1,39 @@
+{
+  "pages": [
+  
+    "pages/index/index",
+      "pages/detail/detail",
+    "pages/order/order",
+    "pages/passenger/passenger",
+    "pages/tickets/tickets",
+    "pages/calendar/calendar",
+    "pages/place/place",
+    "pages/mysite/mysite",
+    "pages/list/list"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#898989",
+    "selectedColor": "#6bc8fd",
+    "list": [
+      {
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/mysite.png",
+        "selectedIconPath": "images/mysite_active.png",
+        "pagePath": "pages/mysite/mysite",
+        "text": "我的"
+      }
+    ]
+  }
+}

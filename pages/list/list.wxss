@@ -1,0 +1,16 @@
+.item{
+height: 325rpx;
+margin:12rpx;
+padding: 55rpx 32rpx 22rpx 38rpx;
+box-sizing: border-box;
+position: relative;
+}
+.help_text{
+ color: #7e7e7e;
+ font-size:12px;
+}
+.oper{
+  position:absolute;
+  bottom: 22rpx ;
+  right: 32rpx;
+}

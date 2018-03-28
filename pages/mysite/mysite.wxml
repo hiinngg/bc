@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="avastar_warp d-flex-column align-items-center justify-content-center">
+    <view class="avastar"></view>
+    <image src='/images/bind.png' style='width:100rpx;height:30rpx;margin-top:-11rpx;'></image>
+    <text style='color:#ffffff;'>Wda-2135</text>
+  </view>
+  <view class="zan-panel" style="margin-top:0;" bindtap='orderlist'>
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__icon d-flex align-items-center">
+        <image src='/images/car.png' style='width:31rpx;height:34rpx;'></image>
+      </view>
+      <view class="zan-cell__bd">汽车票订单</view>
+      <view class="zan-cell__ft"></view>
+    </view>
+  </view>
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__icon d-flex align-items-center">
+        <image src='/images/info.png' style='width:31rpx;height:34rpx;'></image>
+      </view>
+      <view class="zan-cell__bd">关于我们</view>
+      <view class="zan-cell__ft"></view>
+    </view>
+  </view>
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__icon d-flex align-items-center">
+        <image src='/images/service.png' style='max-width:31rpx;max-height:34rpx;'></image>
+      </view>
+      <view class="zan-cell__bd">在线客服</view>
+      <view class="zan-cell__ft"></view>
+    </view>
+  </view>
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__icon d-flex align-items-center">
+        <image src='/images/tel.png' style='width:31rpx;height:34rpx;'></image>
+      </view>
+      <view class="zan-cell__bd">咨询电话</view>
+      <view class="zan-cell__ft"></view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,14 @@
+<import src="/bower_components/zanui-weapp/dist/field/index.wxml" />
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="zan-panel">
+      <template is="zan-field" data="{{ ...config.base.name, value }}"></template>
+      <template is="zan-field" data="{{ ...config.base.type }}"></template>
+      <template is="zan-field" data="{{ ...config.base.idcard }}"></template>
+      <template is="zan-field" data="{{ ...config.base.tel }}"></template>
+    </view>
+    <view class="zan-btns">
+      <button formType="submit" class="zan-btn mybtn">保存</button>
+    </view>
+  </form>
+</view>

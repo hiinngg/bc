@@ -1,0 +1,142 @@
+<scroll-view class="container">
+  <view class="item zan-panel">
+    <view class='d-flex align-items-center justify-content-between'>
+      <view class='d-flex align-items-center'>
+        <text>中山城东车站</text>
+        <view class='d-flex-column align-items-center justify-content-center' style="margin:0 32rpx;">
+          <text class="help_text">DP1510</text>
+          <image src='/images/arrow2.png' style="width:90rpx;height:17rpx;"></image>
+        </view>
+        <text>广州琶洲</text>
+      </view>
+      <text style="align-self:flex-end;">￥48</text>
+    </view>
+
+    <view class="d-flex align-items-center justify-content-between help_text" style="font-size:14px;margin-top:45rpx;">
+      <view>
+        <text>发车时间：</text>
+        <text>3月2号 15：10</text>
+      </view>
+      <text style='color:#5f9df1;'>已取消</text>
+    </view>
+
+    <button class="zan-btn zan-btn--small oper">取消订单</button>
+  </view>
+
+ <view class="item zan-panel">
+    <view class='d-flex align-items-center justify-content-between'>
+      <view class='d-flex align-items-center'>
+        <text>中山城东车站</text>
+        <view class='d-flex-column align-items-center justify-content-center' style="margin:0 32rpx;">
+          <text class="help_text">DP1510</text>
+          <image src='/images/arrow2.png' style="width:90rpx;height:17rpx;"></image>
+        </view>
+        <text>广州琶洲</text>
+      </view>
+      <text style="align-self:flex-end;">￥48</text>
+    </view>
+
+    <view class="d-flex align-items-center justify-content-between help_text" style="font-size:14px;margin-top:45rpx;">
+      <view>
+        <text>发车时间：</text>
+        <text>3月2号 15：10</text>
+      </view>
+      <text style='color:#5f9df1;'>已取消</text>
+    </view>
+
+    <button class="zan-btn zan-btn--small oper">取消订单</button>
+  </view>
+   <view class="item zan-panel">
+    <view class='d-flex align-items-center justify-content-between'>
+      <view class='d-flex align-items-center'>
+        <text>中山城东车站</text>
+        <view class='d-flex-column align-items-center justify-content-center' style="margin:0 32rpx;">
+          <text class="help_text">DP1510</text>
+          <image src='/images/arrow2.png' style="width:90rpx;height:17rpx;"></image>
+        </view>
+        <text>广州琶洲</text>
+      </view>
+      <text style="align-self:flex-end;">￥48</text>
+    </view>
+
+    <view class="d-flex align-items-center justify-content-between help_text" style="font-size:14px;margin-top:45rpx;">
+      <view>
+        <text>发车时间：</text>
+        <text>3月2号 15：10</text>
+      </view>
+      <text style='color:#5f9df1;'>已取消</text>
+    </view>
+
+    <button class="zan-btn zan-btn--small oper">取消订单</button>
+  </view>
+   <view class="item zan-panel">
+    <view class='d-flex align-items-center justify-content-between'>
+      <view class='d-flex align-items-center'>
+        <text>中山城东车站</text>
+        <view class='d-flex-column align-items-center justify-content-center' style="margin:0 32rpx;">
+          <text class="help_text">DP1510</text>
+          <image src='/images/arrow2.png' style="width:90rpx;height:17rpx;"></image>
+        </view>
+        <text>广州琶洲</text>
+      </view>
+      <text style="align-self:flex-end;">￥48</text>
+    </view>
+
+    <view class="d-flex align-items-center justify-content-between help_text" style="font-size:14px;margin-top:45rpx;">
+      <view>
+        <text>发车时间：</text>
+        <text>3月2号 15：10</text>
+      </view>
+      <text style='color:#5f9df1;'>已取消</text>
+    </view>
+
+    <button class="zan-btn zan-btn--small oper">取消订单</button>
+  </view>
+   <view class="item zan-panel">
+    <view class='d-flex align-items-center justify-content-between'>
+      <view class='d-flex align-items-center'>
+        <text>中山城东车站</text>
+        <view class='d-flex-column align-items-center justify-content-center' style="margin:0 32rpx;">
+          <text class="help_text">DP1510</text>
+          <image src='/images/arrow2.png' style="width:90rpx;height:17rpx;"></image>
+        </view>
+        <text>广州琶洲</text>
+      </view>
+      <text style="align-self:flex-end;">￥48</text>
+    </view>
+
+    <view class="d-flex align-items-center justify-content-between help_text" style="font-size:14px;margin-top:45rpx;">
+      <view>
+        <text>发车时间：</text>
+        <text>3月2号 15：10</text>
+      </view>
+      <text style='color:#5f9df1;'>已取消</text>
+    </view>
+
+    <button class="zan-btn zan-btn--small oper">取消订单</button>
+  </view>
+   <view class="item zan-panel">
+    <view class='d-flex align-items-center justify-content-between'>
+      <view class='d-flex align-items-center'>
+        <text>中山城东车站</text>
+        <view class='d-flex-column align-items-center justify-content-center' style="margin:0 32rpx;">
+          <text class="help_text">DP1510</text>
+          <image src='/images/arrow2.png' style="width:90rpx;height:17rpx;"></image>
+        </view>
+        <text>广州琶洲</text>
+      </view>
+      <text style="align-self:flex-end;">￥48</text>
+    </view>
+
+    <view class="d-flex align-items-center justify-content-between help_text" style="font-size:14px;margin-top:45rpx;">
+      <view>
+        <text>发车时间：</text>
+        <text>3月2号 15：10</text>
+      </view>
+      <text style='color:#5f9df1;'>已取消</text>
+    </view>
+
+    <button class="zan-btn zan-btn--small oper">取消订单</button>
+  </view>
+  
+</scroll-view>

@@ -1,0 +1,51 @@
+<!--pages/place/place.wxml-->
+<view class='container' style='padding:33rpx;padding-top:101rpx;'>
+  <view class="box search d-flex align-items-center">
+    <icon type="search" size="14" color='#eee' style="margin-right:3px;" />
+    <input bindinput="autoSearch" confirm-type="搜索" style="width:100%;" placeholder='搜索{{typeTran[type]}}' value="{{inputValue}}" placeholder-style="font-size:14px;"></input>
+    <block wx:if="{{inputValue.length > 0}}">
+      <icon type="clear" size="14" color='#eee' bindtap='clearInput' style="margin-left:3px;" />
+    </block>
+  </view>
+
+
+  <view class="zan-panel" style='margin-top:33rpx;' wx:if="{{inputValue.length > 0}}">
+  <view class="zan-cell"  bindtap="bindCity" data-city="{{inputValue}}" >
+        <view class="zan-cell__bd">{{inputValue}}</view>
+      </view>
+    <view class="zan-cell" wx:if="{{completeList.length==0}}">
+      <view class="zan-cell__bd help_text">没有结果，换个地址试试吧</view>
+    </view>
+
+    <view class="zan-cell" wx:for="{{completeList}}" wx:key="*this" bindtap="bindCity" data-city="{{item.city}}" data-code="{{item.code}}">
+      <view class="zan-cell__bd">{{item.city}}</view>
+    </view>
+  </view>
+
+  <block wx:if="{{inputValue ==''}}">
+
+    <view class='title'>当前</view>
+    <view class='box  d-flex align-items-center justify-content-center' bindtap="{{city?'bindCity':''}}" data-city="{{city}}">
+
+      <text wx:if="{{city}}">{{city}}</text>
+      <text wx:if="{{!city}}">正在定位...</text>
+      <text class='help_text'>(来自GPS定位)</text>
+    </view>
+    <view class="title">历史</view>
+    <view class="box-warpper zan-row d-flex align-items-center flex-wrap">
+
+      <block wx:for="{{historyCity}}">
+        <view class=' zan-col zan-col-8' style="margin-top:15rpx;">
+          <view class="box-item " bindtap="bindCity" data-city="{{item}}">
+            <text>{{item}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+
+
+
+
+
+</view>

@@ -1,0 +1,7 @@
+/* pages/passenger/passenger.wxss */
+
+.mybtn {
+  background: #5f9df1;
+  color: #fff;
+  border-radius:13px; 
+}

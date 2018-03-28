@@ -1,0 +1,72 @@
+.location {
+  padding: 47rpx 33rpx;
+  height: 248rpx;
+  background: #5f9df1;
+  color: #fff;
+  font-size: 11pt;
+}
+
+.addpass {
+  border-radius: 5px;
+  background: #5f9df1;
+}
+
+.zan-switch {
+  background: #5f9df1;
+  border: 1px solid #5f9df1;
+}
+
+.help_text {
+  color: #7e7e7e;
+}
+
+.zan-switch {
+  background: #5f9df1;
+  border: 1px solid #5f9df1;
+}
+
+.oper {
+  height: 100rpx;
+  background: #465262;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index:100;
+}
+
+.tag {
+  width: 69rpx;
+  height: 36rpx;
+  border: 1px solid #c6c5c5;
+  text-align: center;
+  margin-left: 12rpx;
+  line-height: 36rpx;
+}
+
+.nametag {
+  height:44rpx;
+  border: 1px solid #5f9df1;
+  border-radius:15px;
+  padding:9rpx 12rpx; 
+  color: #5f9df1;
+  min-width: 80rpx;
+ line-height: 44rpx;
+ text-align: center;
+ margin-left: 15rpx;
+}
+.nametag_active{
+background: #5f9df1;
+color: #ffffff;
+
+}
+.popup-example--bottom .zan-popup__container {
+  left: 0;
+  right: 0;
+  z-index:200;
+  height:50vh;
+  overflow-y:scroll; 
+}
+.mypopup{
+padding:30rpx 33rpx;
+}
+

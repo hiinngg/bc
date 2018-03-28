@@ -1,0 +1,213 @@
+<import src="/bower_components/zanui-weapp/dist/switch/index.wxml" />
+<import src="/bower_components/zanui-weapp/dist/actionsheet/index.wxml" />
+<view class="container  " catchtouchmove="{{showBottomPopup? 'preventD':''}}" style="padding-bottom:99rpx;height:100vh;overflow-y:scroll;">
+  <view class="location d-flex-column justify-content-center">
+    <view class="zan-row d-flex justify-content-between">
+
+      <view class="d-flex-column zan-col zan-col-8 ">
+        <text style='font-size:24px;'>中山</text>
+        <text style='font-size:11pt;margin-top:26rpx;'>中山城东车站</text>
+      </view>
+
+      <view class="sign d-flex-column align-items-center  zan-col zan-col-8">
+        <text>16:05</text>
+        <image src='/images/arrow.png' style="width:207rpx;height:11rpx;"></image>
+        <text>3月12日 今天</text>
+      </view>
+
+
+      <view class="d-flex-column align-items-end zan-col zan-col-8">
+        <text style='font-size:24px;'>广州</text>
+        <text style='font-size:11pt;margin-top:26rpx;'>广州琶洲</text>
+      </view>
+
+    </view>
+
+    <view class="d-flex justify-content-between" style='margin-top:30rpx;'>
+      <text>车次WK0560,行驶65公里</text>
+      <text>￥22</text>
+    </view>
+
+  </view>
+
+  <view class="zan-panel" style="margin-top:0;">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">该线路不支持在线退票</view>
+      <view class="zan-cell__ft" style="color:#5f9df1;">预订须知</view>
+    </view>
+  </view>
+
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd help_text">
+        车站地址
+        <text>中山市逸仙路1号</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">乘客(
+        <text class="help_text">每单限购3张</text>）</view>
+      <view class="zan-cell__ft">
+        <button class="zan-btn zan-btn--small zan-btn--primary addpass" bindtap="toggleBottomPopup">添加</button>
+      </view>
+    </view>
+
+    <view class="zan-cell">
+      <view class="zan-cell__bd d-flex align-items-center">
+        <image src='/images/delete.png' style="width:40rpx;height:46rpx;margin-right:19rpx;"> </image>
+        <view class='d-flex-column'>
+          <view class="d-flex" style="margin-bottom:13rpx;">
+            <text>李锦庆</text>
+            <view class="tag help_text">成人</view>
+          </view>
+          <view class="help_text">身份证
+            <text style="margin-left:12rpx;">442000********5216</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">取票人</view>
+      <view class="zan-cell__ft d-flex">
+        <view class="nametag nametag_active">李锦庆</view>
+        <view class="nametag">其他</view>
+      </view>
+    </view>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <text style="margin-right:90rpx;">手机号</text>
+        <text>13620383256</text>
+      </view>
+    </view>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <text style="margin-right:90rpx;">手机号</text>
+        <text>13620383256</text>
+      </view>
+    </view>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <text style="margin-right:90rpx;">手机号</text>
+        <text>13620383256</text>
+      </view>
+    </view>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <text style="margin-right:90rpx;">手机号</text>
+        <text>13620383256</text>
+      </view>
+    </view>
+
+  </view>
+
+
+
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--switch">
+      <view class="zan-cell__bd d-flex-column ">
+        <view class="d-flex align-items-center">
+          <text>一元免单</text>
+          <image src='/images/info.png' style='width:35rpx;height:35rpx;margin-left:5rpx;'></image>
+        </view>
+        <text class="help_text">每天5个面单名额，天天免费乘车</text>
+      </view>
+      <view class="zan-cell__ft">
+        <text style="margin-right:15rpx;">￥1</text>
+        <template is="zan-switch" data="{{ checked }}" />
+      </view>
+    </view>
+  </view>
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">出行保障</view>
+      <view class="zan-cell__ft">加速出票</view>
+    </view>
+  </view>
+
+  <view class="zan-panel zan-panel--without-border" style='background:#EDF0F3;'>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <text class="help_text">节假日客运高峰，建议提前1小时到达车站取票，若取票出现异常，请咨询车站工作人员</text>
+      </view>
+    </view>
+  </view>
+
+
+
+
+  <view class="oper zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd" style='color:#ffffff;'>订单总额：
+        <text>￥48</text> </view>
+      <view class="zan-cell__ft">
+        <button class="zan-btn zan-btn--small zan-btn--primary addpass">提交订单</button>
+      </view>
+    </view>
+  </view>
+
+
+
+
+  <view class="popup-example--bottom zan-popup zan-popup--bottom {{ showBottomPopup ? 'zan-popup--show' : ''}}">
+    <view class="zan-popup__mask" catchtap="toggleBottomPopup"></view>
+    <view class="zan-popup__container">
+      <view class=" mypopup">
+        <view class="d-flex justify-content-between align-items-center " style="font-size:14px;">
+          <text catchtap="toggleBottomPopup">取消</text>
+          <text style='color:#5f9df1;'>确定</text>
+        </view>
+        <view class="zan_btns" style='margin:30rpx 0;'>
+          <button class="zan-btn " bindtap='addclient' style="border-top:1px solid #eee;border-bottom:1px solid #eee;color:#5f9df1;">
+            +添加常用联系人
+          </button>
+        </view>
+        <view>
+
+
+          <checkbox-group bindchange="checkchange">
+            <label class="zan-panel" bindtap='toggleClientCheck'>
+              <view class="zan-cell">
+                <view class="zan-cell__icon zan-icon    zan-icon-checked" style="color:#38f;margin-right:15rpx;">
+                      <checkbox hidden value="01760" checked="false"></checkbox>
+                </view>
+                <view class="zan-cell__bd">
+                  <view class="zan-cell__text">李锦请</view>
+                  <view class="zan-cell__desc">442000199312115216</view>
+                </view>
+                <view class="zan-cell__ft">
+                  <view class="zan-cell__icon zan-icon zan-icon-edit" style="color:#38f;"></view>
+                </view>
+              </view>
+            </label>
+            <label class="zan-panel" bindtap='toggleClientCheck'>
+              <view class="zan-cell">
+                <view class="zan-cell__icon zan-icon    zan-icon-checked" style="color:#38f;margin-right:15rpx;">
+                      <checkbox hidden value="01760" checked="false"></checkbox>
+                </view>
+                <view class="zan-cell__bd">
+                  <view class="zan-cell__text">李锦请</view>
+                  <view class="zan-cell__desc">442000199312115216</view>
+                </view>
+                <view class="zan-cell__ft">
+                  <view class="zan-cell__icon zan-icon zan-icon-edit" style="color:#38f;"></view>
+                </view>
+              </view>
+            </label>
+          </checkbox-group>
+
+
+
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+</view>

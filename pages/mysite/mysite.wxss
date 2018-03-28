@@ -1,0 +1,11 @@
+.avastar_warp {
+  height: 231rpx;
+  background: #c1c1c1;
+}
+.avastar {
+  width: 138rpx;
+  height: 138rpx;
+  border-radius: 50%;
+  background: #efeff4;
+  border:2px solid #ffffff;
+}

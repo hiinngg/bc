@@ -1,0 +1,67 @@
+/**app.wxss**/
+@import "bower_components/zanui-weapp/dist/index.wxss";
+
+.container {
+  background: #EDF0F3;
+  overflow: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding:  0;
+}
+.container::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: ' ';
+  width: 100%;
+  height: 1rpx;
+  background-color: #e2e2e2;
+  z-index: 5;
+}
+.help_text{
+color:#7e7e7e;
+font-size:14px;
+
+}
+
+.d-flex{
+  display: flex;
+}
+.d-flex-column{
+ display: flex;
+ flex-direction: column;
+
+}
+.flex-wrap{
+ flex-wrap: wrap; 
+}
+.justify-content-start{
+justify-content:flex-start;
+}
+.justify-content-end{
+justify-content:flex-end;
+}
+.justify-content-center{
+justify-content:center;
+}
+.justify-content-around{
+justify-content:space-around;
+}
+.justify-content-between{
+justify-content:space-between;
+}
+.align-items-start{
+align-items: flex-start;
+}
+.align-items-end{
+align-items: flex-end;
+}
+.align-items-center{
+align-items: center;
+}
+.mybg{
+background: #5F9DF1;
+color: #ffffff; 
+}
+
+

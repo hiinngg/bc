@@ -1,0 +1,74 @@
+
+<view style="padding:0;">
+  <view class=" mydate zan-panel d-flex justify-content-around align-items-center" style="">
+  <block wx:if="{{is_today}}">
+     <text class="dissel" >前一天</text>
+  </block>
+   <block wx:if="{{!is_today}}">
+     <text  bindtap="dateDec">前一天</text>
+  </block>
+
+    <view class="calendar  d-flex justify-content-between align-items-center" bindtap='navtodate'>
+      <image src='/images/calendar.png' style="width:32rpx;height:32rpx;margin:0 66rpx 0 5rpx;"></image>
+      <text>{{date.month}}月{{date.date}}号</text>
+      <text style="margin-left:15rpx;">{{date.desc==""?'周'+dayTran[date.day]:date.desc}}</text>
+      <image src='/images/down.png' style="width:21rpx;height:13rpx;margin:5rpx 5rpx 0 66rpx;"></image>
+    </view>
+    <text bindtap='dateInc'>后一天</text>
+  </view>
+  <scroll-view class="container" scroll-y="true" style="padding-top:148rpx;height:100vh;padding-bottom:110rpx;">
+
+    <view class="zan-panel  "  bindtap='order'  style='margin-top:0;'>
+      <view class="zan-card ">
+        <view class="zan-card__thumb d-flex justify-content-center align-items-center" style='border-right:1px solid #eee;font-size:18px;font-weight:bold;'>
+        <text>15:10</text>
+        </view>
+        <view class="zan-card__detail ">
+          <view class="zan-card__detail-row">
+            <view class="zan-card__right-col " style='text-align:right;padding-right:15px;'>
+              <view class="price">¥ 999.99</view>
+              <view class="num">余票15</view>
+            </view>
+            <view class="zan-card__left-col ">
+              <view class="d-flex align-items-center">
+                <view class="circle_begin"></view>
+                <text>中山城东车站</text>
+              </view>
+              <view class="block"></view>
+              <view class="d-flex align-items-center">
+                <view class="circle_end"></view>
+                <text>广州琶洲</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="zan-card__detail-row zan-c-gray-darker">
+
+            <view class="zan-card__left-col">
+              大型高一级
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  
+  <view class="oper d-flex justify-content-around align-items-center">
+    <view class="d-flex-column justify-content-center align-items-center">
+      <image src='/images/start.png' style='width:47rpx;height:43rpx;'></image>
+      <text>出发车站</text>
+    </view>
+       <view class="d-flex-column justify-content-center align-items-center">
+      <image src='/images/end.png' style='width:47rpx;height:43rpx;'></image>
+      <text>到达车站</text>
+    </view>
+       <view class="d-flex-column justify-content-center align-items-center">
+      <image src='/images/clock.png' style='width:33rpx;height:37rpx;'></image>
+      <text>出发时段</text>
+    </view>
+
+  </view>
+
+
+</view>

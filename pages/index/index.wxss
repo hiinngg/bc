@@ -1,0 +1,29 @@
+/**index.wxss**/
+
+.bg{
+width: 100%;
+height:204rpx;
+}
+.mypanel{
+width:708rpx;
+
+margin:0 auto;
+}
+.tabs{
+
+}
+.mytitle{
+
+color:#7e7e7e;
+margin-right:20rpx;
+}
+.mytext{
+font-size:14pt;
+}
+.tab-item{
+width:180rpx;
+height: 111rpx;
+line-height: 111rpx;
+text-align: center;
+border-bottom: 3px solid #5F9DF1; 
+}
