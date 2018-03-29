@@ -1,8 +1,10 @@
 <view class="container">
   <view class="avastar_warp d-flex-column align-items-center justify-content-center">
-    <view class="avastar"></view>
+    <view class="avastar">
+    <image src="{{userInfo.AvatarUrl}}" style="width:100%;height:100%;"></image>
+    </view>
     <image src='/images/bind.png' style='width:100rpx;height:30rpx;margin-top:-11rpx;'></image>
-    <text style='color:#ffffff;'>Wda-2135</text>
+    <text style='color:#ffffff;'>{{userInfo.NickName}}</text>
   </view>
   <view class="zan-panel" style="margin-top:0;" bindtap='orderlist'>
     <view class="zan-cell zan-cell--access">

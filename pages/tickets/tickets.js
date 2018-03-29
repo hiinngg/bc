@@ -124,7 +124,6 @@ Page(Object.assign({}, Zan.Select, Zan.Switch, {
             bancheList: []
           })
         }
-
       }, complete: function () {
         wx.hideLoading()
       }

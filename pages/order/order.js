@@ -1,5 +1,5 @@
 var Zan = require('../../bower_components/zanui-weapp/dist/index');
-
+var app = getApp()
 Page(Object.assign({}, Zan.Switch, {
   data: {
     checked: false,
@@ -15,14 +15,14 @@ Page(Object.assign({}, Zan.Switch, {
       })
     }
     //获取上一页实例
-    var ticketsPage = pages[pages.length - 2]; 
+    var ticketsPage = pages[pages.length - 2];
     this.setData({
       banci: ticketsPage.data.bancheList[query.banciidx],
       luxian: ticketsPage.data.bancheList[query.banciidx].banchiLuXian[query.luxianidx],
       departure: ticketsPage.data.departure,
       arrival: ticketsPage.data.arrival,
       date: ticketsPage.data.date,
-      total:0
+      total: 0
     })
 
     console.log(ticketsPage.data.bancheList[query.banciidx])
@@ -34,7 +34,31 @@ Page(Object.assign({}, Zan.Switch, {
   onShow() {
   },
   toggleBottomPopup() {
-    this.setData({
+    var that = this
+    wx.request({
+      url: app.globalData.domain + '/WeiXin/GetOpenid2',
+      data: JSON.stringify({Key: app.globalData.userInfo.Key }),
+      method: "POST",
+      success: function (res) {
+    
+       wx.request({
+         url: app.globalData.domain +'/BanChe/Customer/InformationList',
+         data: {
+           "Request": {
+             "OpenId":openid
+           },
+           "T": "json"
+         },
+         method: "POST",
+         success:function(res1){
+            
+         }
+       })
+      }
+    })
+
+
+    that.setData({
       showBottomPopup: !this.data.showBottomPopup
     });
   },
@@ -44,7 +68,7 @@ Page(Object.assign({}, Zan.Switch, {
   preventD: function () {
 
   },
-  checkchange:function(e){
+  checkchange: function (e) {
     console.log(e.detail.value)
   },
   addclient: function () {

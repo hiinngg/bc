@@ -55,13 +55,15 @@
       </view>
     </view>
 
+
+<block wx:for="{{mypassenger}}" wx:for-index="idx" wx:for-item="item">
     <view class="zan-cell">
       <view class="zan-cell__bd d-flex align-items-center">
         <image src='/images/delete.png' style="width:40rpx;height:46rpx;margin-right:19rpx;"> </image>
         <view class='d-flex-column'>
           <view class="d-flex" style="margin-bottom:13rpx;">
-            <text>李锦庆</text>
-            <view class="tag help_text">成人</view>
+            <text>{{item.name}}</text>
+            <view class="tag help_text">{{item.type}}</view>
           </view>
           <view class="help_text">身份证
             <text style="margin-left:12rpx;">442000********5216</text>
@@ -69,6 +71,9 @@
         </view>
       </view>
     </view>
+</block>
+
+
   </view>
 
   <view class="zan-panel">
@@ -81,28 +86,23 @@
     </view>
     <view class="zan-cell">
       <view class="zan-cell__bd">
-        <text style="margin-right:90rpx;">手机号</text>
+        <text style="width:28px;">姓名</text>
         <text>13620383256</text>
       </view>
     </view>
     <view class="zan-cell">
       <view class="zan-cell__bd">
-        <text style="margin-right:90rpx;">手机号</text>
+        <text style="width:28px;">身份证号</text>
         <text>13620383256</text>
       </view>
     </view>
     <view class="zan-cell">
       <view class="zan-cell__bd">
-        <text style="margin-right:90rpx;">手机号</text>
+        <text style="width:28px;">手机号</text>
         <text>13620383256</text>
       </view>
     </view>
-    <view class="zan-cell">
-      <view class="zan-cell__bd">
-        <text style="margin-right:90rpx;">手机号</text>
-        <text>13620383256</text>
-      </view>
-    </view>
+
 
   </view>
 
@@ -146,34 +146,23 @@
 
 
           <checkbox-group bindchange="checkchange">
+
+          <block wx:for="{{passenger}}" wx:for-index="idx" wx:for-item="item" >
             <label class="zan-panel" bindtap='toggleClientCheck'>
               <view class="zan-cell">
                 <view class="zan-cell__icon zan-icon    zan-icon-checked" style="color:#38f;margin-right:15rpx;">
                       <checkbox hidden value="01760" checked="false"></checkbox>
                 </view>
                 <view class="zan-cell__bd">
-                  <view class="zan-cell__text">李锦请</view>
-                  <view class="zan-cell__desc">442000199312115216</view>
+                  <view class="zan-cell__text">{{item.name}}</view>
+                  <view class="zan-cell__desc">{{item.num}}</view>
                 </view>
                 <view class="zan-cell__ft">
                   <view class="zan-cell__icon zan-icon zan-icon-edit" style="color:#38f;"></view>
                 </view>
               </view>
             </label>
-            <label class="zan-panel" bindtap='toggleClientCheck'>
-              <view class="zan-cell">
-                <view class="zan-cell__icon zan-icon    zan-icon-checked" style="color:#38f;margin-right:15rpx;">
-                      <checkbox hidden value="01760" checked="false"></checkbox>
-                </view>
-                <view class="zan-cell__bd">
-                  <view class="zan-cell__text">李锦请</view>
-                  <view class="zan-cell__desc">442000199312115216</view>
-                </view>
-                <view class="zan-cell__ft">
-                  <view class="zan-cell__icon zan-icon zan-icon-edit" style="color:#38f;"></view>
-                </view>
-              </view>
-            </label>
+            </block>
           </checkbox-group>
 
 
