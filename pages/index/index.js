@@ -9,8 +9,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     dayTran: ['日', '一', '二', '三', '四', '五', '六'],
-    departure: "中山市",
-    arrival: "广州市"
+    departure: "中山",
+    arrival: "深圳"
   },
   //事件处理函数
   bindViewTap: function () {
@@ -23,12 +23,14 @@ Page({
   search: function () {
     var that = this
     //拼接日期
-    if (!this.date || JSON.stringify(this.date) == "{}") {  //假设用户没选择日期
-      var date = new Date();
-    } else {
-      var date = new Date(this.date.year, this.date.month, this.date.date) ;
-    }
+    //if (!this.date || JSON.stringify(this.date) == "{}") {  //假设用户没选择日期
+      //var _date = new Date();
+      //var date = _date.getFullYear()+"-"+(_date.getMonth()+1)+"-"+_date.getDate();
+    //} else {
+     // var date = this.date.year+"-"+this.date.month+"-"+this.date.date ;
+    //}
 
+    var date = this.data.date.year + "-" + this.data.date.month + "-" + this.data.date.date;
     wx.navigateTo({
       url: '../tickets/tickets?departure='+that.data.departure+"&arrival="+that.data.arrival+"&date="+date,
     })
@@ -121,7 +123,7 @@ Page({
       desc: "今天"
     }
     this.setData({
-      date
+      date:date
     })
 
 

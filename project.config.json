@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.91",
 	"appid": "wx500c3ac5e026c3c8",
-	"projectname": "jcjq_ticket",
+	"projectname": "jcjq_banche",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

@@ -60,3 +60,13 @@
 .dissel{
   color:#aac8f7;
 }
+.popup-example--bottom .zan-popup__container {
+  left: 0;
+  right: 0;
+  z-index:2000;
+  height:50vh;
+  overflow-y:scroll; 
+}
+.mypopup{
+padding:30rpx 33rpx;
+}

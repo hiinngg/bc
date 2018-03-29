@@ -30,14 +30,15 @@ Page({
         wx.request({
           url: `https://apis.map.qq.com/ws/geocoder/v1/?location=${latitude},${longitude}&key=${config.key}`,
           success: res => {
+           
             // console.log(res)
             // console.log(res.data.result.ad_info.city+res.data.result.ad_info.adcode);
             that.setData({
-              city: res.data.result.ad_info.city,
+              city:that.myfilter( res.data.result.ad_info.city),
               currentCityCode: res.data.result.ad_info.adcode,
             }, function () {
               app.globalData.location = {
-                'city': res.data.result.ad_info.city,
+                'city': that.myfilter(res.data.result.ad_info.city),
                 'citycode': res.data.result.ad_info.adcode
               }
             })
@@ -47,6 +48,12 @@ Page({
       }
     })
   },
+  myfilter:function(str){
+  
+    return str.substr(0, str.lastIndexOf("市"))
+  },
+
+
   onLoad: function (query) {
     var _this = this
     this.setData({
