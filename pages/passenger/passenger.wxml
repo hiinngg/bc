@@ -6,19 +6,15 @@
       <template is="zan-field" data="{{ ...config.base.type }}"></template>
       <template is="zan-field" data="{{ ...config.base.idcard }}"></template>
       <template is="zan-field" data="{{ ...config.base.tel }}"></template>
+      <view class="zan-cell zan-field">
+        <view class="zan-cell__hd zan-field__title">年龄</view>
+        <picker mode="selector" name="leixing" class="zan-field__input zan-cell__bd" range="{{ area }}" range-key="show" value="{{ areaIndex }}" bindchange="onAreaChange">
+          {{ area[areaIndex]['show'] }}
+        </picker>
+      </view>
+
     </view>
-    <view class="zan-cell zan-field">
-      <view class="zan-cell__hd zan-field__title">请选择</view>
-      <picker
-        mode="selector"
-        class="zan-field__input zan-cell__bd"
-        range="{{ area }}"
-        value="{{ areaIndex }}"
-        bindchange="onAreaChange"
-      >
-        {{ area[areaIndex] }}
-      </picker>
-    </view>
+
     <view class="zan-btns">
       <button formType="submit" class="zan-btn mybtn">保存</button>
     </view>

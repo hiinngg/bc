@@ -132,7 +132,11 @@ Page(Object.assign({}, Zan.Select, Zan.Switch, {
 
   },
 
-
+  datediff: function (date) {  
+    //将xxxx-xx-xx的时间格式，转换为 xxxx/xx/xx的格式   
+    return date.replace(/\-/g, "/");  
+  
+  }, 
 
   onLoad: function (query) {
     var that = this
@@ -143,13 +147,12 @@ Page(Object.assign({}, Zan.Select, Zan.Switch, {
         url: '../index/index',
       })
     }
-    var _date = new Date(query.date);
+    var _date = new Date(this.datediff(query.date));
     //渲染数据
     this.setData({
       departure: query.departure,
       arrival: query.arrival,
       date: { year: _date.getFullYear(), month: _date.getMonth() + 1, date: _date.getDate(), day: _date.getDay(), desc: that.data.trans[that.compdate(_date)] || "" },
-      dateStr: query.date
     }, function () {
       that.search();
     })
@@ -157,14 +160,16 @@ Page(Object.assign({}, Zan.Select, Zan.Switch, {
 
 
   onShow: function () {
-
+  var that = this
     var date = this.data.date;
     if (this.compdate(new Date(date.year, date.month - 1, date.date)) != 0) {
       this.setData({
         is_today: false
+      }, function () {
+        that.search();
       })
     }
-
+    that.search();
 
   },
 

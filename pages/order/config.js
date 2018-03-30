@@ -3,7 +3,7 @@ module.exports = {
   base: {
     name: {
       focus: true,
-      title: '乘客姓名',
+      title: '姓名',
       name:"name",
       placeholder: '请输入乘客姓名'
     },
