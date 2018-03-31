@@ -153,8 +153,6 @@ Page(Object.assign({}, Zan.Select, Zan.Switch, {
       departure: query.departure,
       arrival: query.arrival,
       date: { year: _date.getFullYear(), month: _date.getMonth() + 1, date: _date.getDate(), day: _date.getDay(), desc: that.data.trans[that.compdate(_date)] || "" },
-    }, function () {
-      that.search();
     })
   },
 

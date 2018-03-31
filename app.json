@@ -1,6 +1,6 @@
 {
   "pages": [
- 
+    
     "pages/index/index",
     "pages/detail/detail",
     "pages/order/order",
@@ -9,12 +9,14 @@
     "pages/calendar/calendar",
     "pages/place/place",
     "pages/mysite/mysite",
-    "pages/list/list"
+    "pages/list/list",
+  "pages/notice/notice"
+  
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "菊城假期候机楼",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

@@ -2,6 +2,7 @@ var Zan = require('../../bower_components/zanui-weapp/dist/index');
 const config = require('./config');
 import WxValidate from '../../bower_components/wx-validate/WxValidate'
 const { checkMod } = require('../../utils/util.js');
+var WxParse = require('../../bower_components/wxParse/wxParse.js');
 var app = getApp()
 Page(Object.assign({}, Zan.Field, Zan.Switch, {
   data: {
@@ -14,9 +15,9 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
     childZShu: 0,
     childNZShu: 0,
     oldShu: 0,
-    name:"",
-    idcard:"",
-    tel:""
+    name: "",
+    idcard: "",
+    tel: ""
   },
   other: function () {
     var config = this.data.config;
@@ -25,9 +26,9 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
       other: true,
       config: config,
       keren: false,
-      name :"",
-      idcard : "",
-      tel : ""
+      name: "",
+      idcard: "",
+      tel: ""
     })
   },
   keren: function (e) {
@@ -36,17 +37,20 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
       return v.ID = id
     })
     var config = this.data.config;
-     
-   
-
     this.setData({
       keren: e.currentTarget.dataset.id,
       config: config,
       other: false,
-      name : value.KeRenName,
+      name: value.KeRenName,
       idcard: value.ZhengJianHao,
-      tel :  value.ShouJi
+      tel: value.ShouJi
     })
+  },
+  know:function(){
+    wx.navigateTo({
+      url: '../notice/notice',
+    })
+
   },
 
   delpass: function (e) {
@@ -54,16 +58,16 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
     var index = this.data.passenger.findIndex(function (v) {
       return v.ID == e.currentTarget.dataset.id
     })
-    if (index == that.data.keren){
+    if (index == that.data.keren) {
       that.other()
     }
     var passenger = this.data.passenger
     passenger[index].is_checked = false;
     var total = this.data.total;
-    total = total - that.priceType(passenger[index].LeiXing,-1)
+    total = total - that.priceType(passenger[index].LeiXing, -1)
     this.setData({
       passenger: passenger,
-      total:total,
+      total: total,
       mypassenger: passenger.filter(function (value) {
         return value.is_checked
       })
@@ -73,14 +77,14 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
 
   onLoad(query) {
     //如果当前页面栈出错则重定向
-    var pages = getCurrentPages();
-    if (pages.length < 2) {
-      wx.reLaunch({
+     var pages = getCurrentPages();
+      if (pages.length < 2) {
+     wx.reLaunch({
         url: '../index/index',
       })
-    }
-    //获取上一页实例
-    var ticketsPage = pages[pages.length - 2];
+      }
+    //获取上一页实例   ,
+     var ticketsPage = pages[pages.length - 2];
     this.setData({
       banci: ticketsPage.data.bancheList[query.banciidx],
       luxian: ticketsPage.data.bancheList[query.banciidx].banchiLuXian[query.luxianidx],
@@ -89,11 +93,6 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
       date: ticketsPage.data.date,
       total: 0
     })
-
-    console.log(ticketsPage.data.bancheList[query.banciidx])
-    console.log(ticketsPage.data.bancheList[query.banciidx].banchiLuXian[query.luxianidx])
-
-
   },
 
   onShow() {
@@ -122,7 +121,7 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
             success: function (res1) {
               wx.hideLoading();
               if (res1.data.Code == 0) {
-              
+
                 that.setData({
                   my_passenger: res1.data.Result.Information,
                   passenger: res1.data.Result.Information.map(function (v) {
@@ -131,7 +130,7 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
                     var a = v.ZhengJianHao
                     a = a.split('')   //将a字符串转换成数组
                     a.splice(6, 8, 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x');
-                    v['card'] =a.join('')
+                    v['card'] = a.join('')
                     v['is_checked'] = false
                     v['is_active'] = false
                     return v;
@@ -171,7 +170,7 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
 
   },
   mypassenger: function () {
-   var that =this
+    var that = this
     var passenger = this.data.passenger
     var that = this
     var total = this.data.total;
@@ -179,13 +178,13 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
       return value.is_checked
     })
     mypassenger.map(function (v) {
-      total += that.priceType(v.LeiXing,1) 
-     
+      total += that.priceType(v.LeiXing, 1)
+
     })
 
     this.setData({
       showBottomPopup: !this.data.showBottomPopup,
-      total:total,
+      total: total,
       mypassenger: passenger.filter(function (value) {
         return value.is_checked
       })
@@ -195,7 +194,7 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
   },
 
   //判定票价类型
-  priceType: function (leixing,field) {
+  priceType: function (leixing, field) {
     var that = this
     //LeiXing的字段，参数是成人: adult, 幼儿:childZ, 儿童不占床:childNZ, 老人:old
     //banchiPrice
@@ -204,11 +203,11 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
     // childZPrice
     // oldPrice
     //adultShu: 0,
-     // childZShu: 0,
-        //childNZShu: 0,
-          //oldShu: 0
+    // childZShu: 0,
+    //childNZShu: 0,
+    //oldShu: 0
     var price = 0;
-    var banchiPrice = this.data.banci.banchiPrice
+      var banchiPrice = this.data.banci.banchiPrice
     switch (leixing) {
       case 'adult':
         price = banchiPrice['adultPrice']
@@ -234,7 +233,7 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
           oldShu: that.data.oldShu + field
         })
         break;
-        default:
+      default:
         price = banchiPrice['adultPrice']
         that.setData({
           adultShu: that.data.adultShu + field
@@ -265,32 +264,47 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
       showCancel: false,
     })
   },
+  nameinput: function (e) {
+    this.setData({
+      name: e.detail.value
+    })
+  },
+  telinput: function (e) {
+    this.setData({
+      tel: e.detail.value
+    })
+  },
+  idcardinput: function (e) {
+    this.setData({
+      idcard: e.detail.value
+    })
+  },
 
-//提交订单！！！！
+  //提交订单！！！！
   submit: function (e) {
-    var that =this
+    var that = this
     console.log(this.data.keren)
 
     var config = this.data.config;
-    if(this.data.keren){
+    if (this.data.keren) {
       var value = this.data.my_passenger.find(function (v) {
         return v.ID == that.data.keren
       })
-     config.base.idcard.value=value.ZhengJianHao
+      config.base.idcard.value = value.ZhengJianHao
     }
-     
-    var _passenger = this.data.mypassenger.map(function(v){
-    return {
-      "Name": v.KeRenName,
-      "ShouJi": v.ShouJi,
-      "ZJLeiXing": "身份证",
-      "zhengJianHao": v.ZhengJianHao,
-      "piaoJiaLeiXing": "adult"
-    };
-    })  
-      
 
-    if (this.data.name ==""){
+    var _passenger = this.data.mypassenger.map(function (v) {
+      return {
+        "Name": v.KeRenName,
+        "shouJi": v.ShouJi,
+        "ZJLeiXing": "身份证",
+        "zhengJianHao": v.ZhengJianHao,
+        "piaoJiaLeiXing": v.LeiXing || "adult"
+      }
+    })
+
+
+    if (this.data.name == "") {
       this.showModal("请填写姓名")
       return false
     }
@@ -303,11 +317,11 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
       this.showModal("请填写电话")
       return false
     }
-    if (!checkMod(this.data.idcard)){
+    if (!checkMod(this.data.idcard)) {
       this.showModal("请填写正确的身份证号码")
       return false
     }
-    if (! /^1[34578]\d{9}$/.test(this.data.tel)){
+    if (! /^1[34578]\d{9}$/.test(this.data.tel)) {
       this.showModal("请填写正确的电话")
       return false
     }
@@ -321,13 +335,13 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
       data: JSON.stringify({ Key: app.globalData.userInfo.Key }),
       method: "POST",
       success: function (res) {
-
+        var res = res
         wx.request({
           url: app.globalData.domain + '/BanChe/BanChiOrder/Create',
-          data: {
-            "Result": {
-              "banchiPlanNO": that.data.banci.banchiPlanNO, 
-              "planNO": that.data.banci.planNO, 
+          data: JSON.stringify({
+            "Request": {
+              "banchiPlanNO": that.data.banci.banchiPlanNO,
+              "planNO": that.data.banci.planNO,
               "banchiLuXian": that.data.luxian,
               "banchiShu": {
                 "adultShu": that.data.adultShu,
@@ -335,7 +349,7 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
                 "childNZShu": that.data.childNZShu,
                 "oldShu": that.data.oldShu
               },
-              "custonerID": 'oVeHG5SzhzFcdE6ECamxdgGk9j9k',
+              "custonerID": res.data.Result.Openid,
               "lianXiRen": that.data.name,
               "lianXiDianHua": that.data.tel,
               "ZJLeiXing": "身份证",
@@ -343,27 +357,54 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
               "Customers": _passenger
             },
             "T": "json"
-
-          },
+          }),
           method: "POST",
           success: function (res1) {
             wx.hideLoading();
             if (res1.data.Code == 0) {
-              wx.showToast({
-                title: '保存成功',
-                icon: 'success',
-                duration: 2000,
-                success: function () {
-                  wx.navigateBack({
-                    delta: 1,
+              //调起微信支付
+              wx.requestPayment({
+                'timeStamp': res1.data.Result.XiaoChengXu.timeStamp,
+                'nonceStr': res1.data.Result.XiaoChengXu.nonceStr,
+                'package': 'prepay_id =' + res1.data.Result.XiaoChengXu.nonceStr,
+                'signType': 'MD5',
+                'paySign': res1.data.Result.XiaoChengXu.paySign,
+                'success': function (res) {
+                  wx.showToast({
+                    title: '支付成功',
+                    icon: 'success',
                   })
+                  setTimeout(function () {
+                    wx.redirectTo({
+                      url: '../list/list'
+                    })
+                  }, 1500)
+                },
+                'fail': function (res) {
+                  wx.showToast({
+                    title: '支付失败',
+                    icon: 'error',
+
+                  })
+                  setTimeout(function () {
+                    wx.redirectTo({
+                      url: '../list/list'
+                    })
+                  }, 1500)
                 }
               })
             } else {
-              wx.showModal({
-                title: '出错了',
-                content: '请重新提交',
+              wx.showToast({
+                title: res1.data.Message,
+                icon: 'none',
+
               })
+              setTimeout(function () {
+                wx.redirectTo({
+                  url: '../list/list'
+                })
+              }, 1500)
+
             }
           },
         })
@@ -398,7 +439,7 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
     // 验证字段的提示信息，若不传则调用默认的信息
     const messages = {
       name: {
-        required: '请填写姓名',
+        required: '请填写取票人姓名',
       },
       tel: {
         required: '请输入手机号码',

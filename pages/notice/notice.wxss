@@ -1,0 +1,2 @@
+/* pages/notice/notice.wxss */
+@import "../../bower_components/wxParse/wxParse.wxss";

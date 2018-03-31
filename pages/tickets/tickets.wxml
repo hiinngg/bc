@@ -58,8 +58,8 @@
   </scroll-view>
 
 
-  <view class="oper d-flex justify-content-around align-items-center">
-    <view class="d-flex-column justify-content-center align-items-center" bindtap="toggleSpPopup">
+  <view hidden='true' class="oper d-flex justify-content-around align-items-center">
+    <view class="d-flex-column justify-content-center align-items-center" >
       <image src='/images/start.png' style='width:47rpx;height:43rpx;'></image>
       <text>出发车站</text>
     </view>

@@ -5,20 +5,31 @@ App({
     wx.showLoading({
       title: '加载中',
     })
-    wx.getStorage({
-      key: 'userInfo',
-      success: function (res) {
-       
-        if(res.data){
-          that.globalData.userInfo =  res.data
-          wx.hideLoading()
-        }
-      },
-      fail: function () {
-      //木有缓存用户信息
-       that.mylogin()
-      }
+    wx.setEnableDebug({
+      enableDebug: false
     })
+    var res = wx.getStorageSync('userInfo')
+    wx.hideLoading()
+    if (res.data) {
+      that.globalData.userInfo = res.data
+    } else {
+      that.mylogin()
+    }
+
+  },
+
+  onShow:function(){
+    var that = this
+    wx.showLoading({
+      title: '加载中',
+    })
+    var res = wx.getStorageSync('userInfo')
+    wx.hideLoading()
+    if (res.data) {
+      that.globalData.userInfo = res.data
+    } else {
+      that.mylogin()
+    }
   },
 
   mylogin: function () {

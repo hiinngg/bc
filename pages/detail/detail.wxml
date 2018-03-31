@@ -3,8 +3,8 @@
     <view class="zan-row d-flex justify-content-between">
 
       <view class="d-flex-column zan-col zan-col-8 ">
-        <text style='font-size:24px;'>中山</text>
-        <text style='font-size:11pt;margin-top:26rpx;'>中山城东车站</text>
+        <text style='font-size:24px;'>{{order.BanChiLuXian.StarCity}}</text>
+        <text style='font-size:11pt;margin-top:26rpx;'>{{order.BanChiLuXian.StarPlace}}</text>
       </view>
 
       <view class="sign d-flex-column align-items-center  zan-col zan-col-8">
@@ -15,37 +15,52 @@
 
 
       <view class="d-flex-column align-items-end zan-col zan-col-8">
-        <text style='font-size:24px;'>广州</text>
-        <text style='font-size:11pt;margin-top:26rpx;'>广州琶洲</text>
+        <text style='font-size:24px;'>{{order.BanChiLuXian.EndCity}}</text>
+        <text style='font-size:11pt;margin-top:26rpx;'>{{order.BanChiLuXian.EndPlace}}</text>
       </view>
 
     </view>
 
-    <view class="d-flex justify-content-between" style='margin-top:30rpx;'>
-      <text>车次WK0560,行驶65公里</text>
-      <text>￥22</text>
+    <view class="d-flex justify-content-start" style='margin-top:30rpx;'>
+      <text>车次{{order.BanChePlanNO}},行驶{{order.BanChiLuXian.KilometreNumber}}公里</text>
     </view>
 
   </view>
 
- <view class="zan-panel">
+  <view class="zan-panel">
     <view class="zan-cell">
       <view class="zan-cell__bd">车站地址</view>
+      <text class="help_text">{{order.BanChiLuXian.StarPlaceAddress}}</text>
     </view>
   </view>
-    <view class="zan-panel">
+  <view class="zan-panel">
     <view class="zan-cell zan-cell--access">
-      <view class="zan-cell__bd">取票人、乘车人*1</view>
-      <view class="zan-cell__ft"></view>
+      <view class="zan-cell__bd">取票人、乘车人*{{order.c_length}}</view>
+  
     </view>
+ 
+
   </view>
-    <view class="zan-panel">
+  <view hidden="true" class="zan-panel">
     <view class="zan-cell zan-cell--access">
       <view class="zan-cell__bd">购票、取票、退票须知</view>
       <view class="zan-cell__ft"></view>
     </view>
   </view>
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">二维码</view>
+      <view class="zan-cell__ft"></view>
+    </view>
 
+    <view wx:if="{{order.RQCode!=''}}" class="zan-cell">
+      <view class="zan-cell__bd">
+        <image src="{{order.RQCode}}"></image>
+      </view>
+
+    </view>
+
+  </view>
 
 
 
